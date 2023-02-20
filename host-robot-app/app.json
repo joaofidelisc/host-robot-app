@@ -3,7 +3,7 @@
     "name": "host-robot-app",
     "slug": "host-robot-app",
     "version": "1.0.0",
-    "orientation": "default",
+    "orientation": "landscape",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
