@@ -11,11 +11,11 @@ export default function Home() {
   const [idioma, setIdioma] = useState('PT-BR');
   const [index, setIndex] = useState(0);
 
-  useEffect(()=>{
-    console.log('Teste....\n\n');
-    console.log('Dimensões da tela:', width, height);
-    console.log('IDIOMA:', idioma);
-  }, [idioma]);
+  // useEffect(()=>{
+  //   // console.log('Teste....\n\n');
+  //   // console.log('Dimensões da tela:', width, height);
+  //   // console.log('IDIOMA:', idioma);
+  // }, [idioma]);
 
 
   return (

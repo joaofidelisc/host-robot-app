@@ -12,9 +12,6 @@ const cardHeight = height*0.4263;
 const Card = (props) => {
   const navigation = useNavigation();
 
-//   useEffect(()=>{
-//   })
-
   return (
     <TouchableOpacity
         onPress={()=> navigation.navigate(props.screenName)}
@@ -48,6 +45,7 @@ const styles = StyleSheet.create({
     cardImage: {
       width: '100%',
       height: '58.94%',
+      borderRadius: 50
     },
     cardTitle: {
       fontSize: cardHeight*0.0604,

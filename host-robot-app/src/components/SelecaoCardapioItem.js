@@ -7,9 +7,6 @@ const { width, height } = Dimensions.get('window');
 const SelecaoCardapioItem = (props) => {
   const navigation = useNavigation();
 
-//   useEffect(()=>{
-//   })
-
   return (
     <View style={styles.viewCardapioItem}>
       <Text style={styles.textoDiaSemana}>

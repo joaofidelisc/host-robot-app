@@ -1,3 +1,5 @@
+import React, { useEffect } from 'react';
+
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions} from 'react-native';
 import SelecaoCardapioItem from '../../components/SelecaoCardapioItem';
@@ -5,6 +7,20 @@ import SelecaoCardapioItem from '../../components/SelecaoCardapioItem';
 const { width, height } = Dimensions.get('window');
 
 export default function Cardapio() {
+  
+  // useEffect(()=>{
+  //   // const hoje = new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+  //   const dia = new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo', day: 'numeric' });
+  //   console.log('DIA:',dia); // exibe a data atual no formato "dd/mm/aaaa"
+
+  // })
+  // const first
+
+  const apiRU = async()=>{
+    const resposta = await fetch("https://petbcc.ufscar.br/ru_api/");
+
+  }
+
 
   return (
     <View style={styles.container}>
