@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions} from 'react-native';
-import SelecaoCardapioItem from '../../components/SelecaoCardapioItem';
+import SelecaoCardapio from '../../components/SelecaoCardapio';
+import CardCardapio from '../../components/CardCardapio';
 
 const { width, height } = Dimensions.get('window');
 
@@ -18,43 +19,15 @@ export default function Cardapio() {
 
   const apiRU = async()=>{
     const resposta = await fetch("https://petbcc.ufscar.br/ru_api/");
-
+    console.log(resposta);
   }
 
 
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <View style={styles.fundoSelecao}>
-        <SelecaoCardapioItem
-          diaSemana =  'Seg'
-          diaMes =  '1'
-        />
-        <SelecaoCardapioItem
-          diaSemana =  'Ter'
-          diaMes =  '2'
-        />
-        <SelecaoCardapioItem
-          diaSemana =  'Qua'
-          diaMes =  '3'
-        />
-        <SelecaoCardapioItem
-          diaSemana =  'Qui'
-          diaMes =  '4'
-        />
-        <SelecaoCardapioItem
-          diaSemana =  'Sex'
-          diaMes =  '5'
-        />
-        <SelecaoCardapioItem
-          diaSemana =  'Sáb'
-          diaMes =  '6'
-        />
-        <SelecaoCardapioItem
-          diaSemana =  'Dom'
-          diaMes =  '7'
-        />
-      </View>
+      <SelecaoCardapio/>
+      <CardCardapio/>
     </View>
   );
 }
