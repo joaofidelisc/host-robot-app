@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
+// import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
+
+
 
 import Card from '../../components/Card.js';
 
@@ -8,6 +11,10 @@ const { width, height } = Dimensions.get('window');
 
 export default function Extensao() {
 
+  useEffect(()=>{
+    console.log("Altura:", height);
+    console.log("Largura:", width);
+  })
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -15,7 +22,7 @@ export default function Extensao() {
       <Text style={[styles.titulo, {top:height*0.12}]}>Clique em algum e conheça mais sobre ele!</Text>
       <View style={{flexDirection:'row'}}>
         <Card
-          imageSource={require('../../assets/Cards_Extensao/CATI_Jr.png')}
+          imageSource={require('../../assets/Cards_Extensao/CATIJr.png')}
           cardTitle="CATI Jr."
           cardText={'Empresa Júnior. Trabalham com desenvolvimento de software.'}
           screenName="Grupos de extensão - CATI Jr."
@@ -54,7 +61,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: height*0.08,
     color: '#1C1B1F',
-    fontWeight: '700',
+    fontWeight: 'bold',
     fontSize: height*0.035,
     marginBottom: height*0.09,
     marginRigth: width*0.495,

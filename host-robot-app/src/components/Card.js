@@ -43,9 +43,12 @@ const styles = StyleSheet.create({
       borderRadius: 20,
     },
     cardImage: {
-      width: '100%',
-      height: '58.94%',
-      borderRadius: 50
+      width: cardWidth*0.9,
+      height: cardHeight*0.5294,
+      alignSelf:'center',
+      resizeMode: 'contain',
+      borderWidth: 0,
+      borderColor: 'transparent',
     },
     cardTitle: {
       fontSize: cardHeight*0.0604,
