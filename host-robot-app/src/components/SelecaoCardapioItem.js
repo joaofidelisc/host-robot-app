@@ -12,8 +12,8 @@ const SelecaoCardapioItem = (props) => {
       <Text style={styles.textoDiaSemana}>
         {props.diaSemana}
       </Text>
-      <TouchableOpacity style={styles.cardapioSelecao}>
-        <Text style={styles.textSelecao}>
+      <TouchableOpacity style={styles.botaoSelecaoDiaMes}>
+        <Text style={styles.textoBotaoSelecaoDiaMes}>
           {props.diaMes}
         </Text>
       </TouchableOpacity>
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    cardapioSelecao:{
+    botaoSelecaoDiaMes:{
         marginTop:4,
         justifyContent:'center',
         alignItems:'center',
@@ -38,8 +38,7 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         backgroundColor: '#FFFFFF',
     },
-    textSelecao:{
-        
+    textoBotaoSelecaoDiaMes:{        
         color: '#4D94DD',
         //margin:3,
     },
@@ -48,9 +47,12 @@ const styles = StyleSheet.create({
         color:'#FFFFFF',
     },
     viewCardapioItem:{
-        alignItems: 'center',
-        width: width*0.0546875,
-        height: height*0.0875,
+      //paddingLeft: 50,
+      //paddingRight: 20,
+      alignItems: 'center',
+      width: width*0.11,
+      //width: 120,
+      height: height*0.0875,
     }
 });  
 
