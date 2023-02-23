@@ -1,3 +1,5 @@
+import { format, startOfWeek } from 'date-fns'
+
 import React, {useEffect} from 'react';
 import { View, Image, Text, StyleSheet, TouchableOpacity, Dimensions, PixelRatio } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -7,13 +9,16 @@ const { width, height } = Dimensions.get('window');
 const SelecaoCardapioItem = (props) => {
   const navigation = useNavigation();
 
+  const { index, setIndex, selectedIndex } = props
+  console.log('SelecaoCardapioItem 13:'+ selectedIndex);
+
   return (
     <View style={styles.viewCardapioItem}>
       <Text style={styles.textoDiaSemana}>
         {props.diaSemana}
       </Text>
-      <TouchableOpacity style={styles.botaoSelecaoDiaMes}>
-        <Text style={styles.textoBotaoSelecaoDiaMes}>
+      <TouchableOpacity style={ (props.diaMes == selectedIndex ) ? styles.botaoSelecionadoDiaMes : styles.botaoNaoSelecionadoDiaMes} onPress={(index) => setIndex(props.diaMes)} >
+        <Text style={ (props.diaMes == selectedIndex) ? styles.textoBotaoSelecionadoDiaMes : styles.textoBotaoNaoSelecionadoDiaMes}>
           {props.diaMes}
         </Text>
       </TouchableOpacity>
@@ -21,6 +26,7 @@ const SelecaoCardapioItem = (props) => {
   );
 };
 
+//onPress= { () => recebeIndex(props.diaMes) }
 
 const styles = StyleSheet.create({
     container: {
@@ -29,18 +35,32 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    botaoSelecaoDiaMes:{
-        marginTop:4,
-        justifyContent:'center',
-        alignItems:'center',
-        width: 30, 
-        height: 30,
-        borderRadius: 100,
-        backgroundColor: '#FFFFFF',
+    botaoSelecionadoDiaMes:{
+      marginTop:4,
+      justifyContent:'center',
+      alignItems:'center',
+      width: 30, 
+      height: 30,
+      borderRadius: 100,
+      backgroundColor: '#FFFFFF',     //selecionado
+      //backgroundColor: '#4D94DD',   //não selecionado
     },
-    textoBotaoSelecaoDiaMes:{        
-        color: '#4D94DD',
-        //margin:3,
+    botaoNaoSelecionadoDiaMes:{
+      marginTop:4,
+      justifyContent:'center',
+      alignItems:'center',
+      width: 30, 
+      height: 30,
+      borderRadius: 100,
+      backgroundColor: '#4D94DD',   //não selecionado
+    },
+    textoBotaoSelecionadoDiaMes:{        
+      color: '#4D94DD',               //selecionado
+      //margin:3,
+    },
+  textoBotaoNaoSelecionadoDiaMes:{        
+    color: '#FFFFFF',             //não selecionado
+    //margin:3,
     },
     textoDiaSemana:{
         fontWeight: '600',

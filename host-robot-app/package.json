@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@react-navigation/stack": "^6.3.14",
+    "date-fns": "^2.29.3",
     "expo": "~47.0.12",
     "expo-screen-orientation": "~5.0.1",
     "expo-status-bar": "~1.4.2",

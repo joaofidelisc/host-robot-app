@@ -10,40 +10,43 @@ const cardWidth = (width*0.8)/2;
 
 const CardCardapioItem = (props) => {
   const navigation = useNavigation();
-
+  /*console.log('CardCardapioItem 13: dados recebidos no componente');
+  console.log(props.data[0]);
+  console.log(props.data[0].campus);*/
+  const cardapioDia = props.data[0];
   return (
       <View style={styles.CardCardapio}>
 
         <View style={styles.viewTituloRefeicao}>
-          <Text style={styles.tituloRefeicao}>Almoço</Text>
+          <Text style={styles.tituloRefeicao}>{props.refeicao}</Text>
         </View>
 
         <View style={styles.viewHorarioRefeicao}>
           <Image source={require('../assets/relogio.png')} style={{width: 20, height: 20}}/>
-          <Text style={{paddingLeft:16}}>11h00 - 14h00</Text>
+          <Text style={{paddingLeft:16}}>{props.horario}</Text>
         </View>
           
         <View style={styles.viewDescricaoRefeicao}>
           <Text style={styles.textoItemRefeicao}>Prato Principal - Sem restrição</Text>
-          <Text style={styles.textoValor}>teste</Text>
+          <Text style={styles.textoValor}>{cardapioDia.main_dish_unrestricted}</Text>
           
           <Text style={styles.textoItemRefeicao}>Prato Principal - Vegetariano</Text>
-          <Text style={styles.textoValor}>teste</Text>
+          <Text style={styles.textoValor}>{cardapioDia.main_dish_vegetarian}</Text>
           
           <Text style={styles.textoItemRefeicao}>Prato Principal - Extra com ovo</Text>
-          <Text style={styles.textoValor}>teste</Text>
+          <Text style={styles.textoValor}>{cardapioDia.main_dish_extra}</Text>
           
           <Text style={styles.textoItemRefeicao}>Guarnição</Text>
-          <Text style={styles.textoValor}>teste</Text>
+          <Text style={styles.textoValor}>{cardapioDia.garnish}</Text>
           
           <Text style={styles.textoItemRefeicao}>Acompanhamentos</Text>
-          <Text style={styles.textoValor}>teste</Text>
+          <Text style={styles.textoValor}>{cardapioDia.accompaniment}</Text>
           
           <Text style={styles.textoItemRefeicao}>Salada</Text>
-          <Text style={styles.textoValor}>teste</Text>
+          <Text style={styles.textoValor}>{cardapioDia.salads}</Text>
           
           <Text style={styles.textoItemRefeicao}>Sobremesa</Text>
-          <Text style={styles.textoValor}>teste</Text>
+          <Text style={styles.textoValor}>{cardapioDia.dessert}</Text>
         </View>
       </View>
   );
