@@ -3,7 +3,7 @@ import React, { useEffect, useState} from 'react';
 import { format, startOfWeek } from 'date-fns'
 
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Dimensions, ScrollView} from 'react-native';
 
 import SelecaoCardapio from '../../components/SelecaoCardapio';
 import CardCardapio from '../../components/CardCardapio';
@@ -44,11 +44,12 @@ export default function Cardapio() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
+      <ScrollView style={{margin: '1%'}}>
       <SelecaoCardapio comecoSemana = {format( startOfWeek(new Date(2023,1,13)), 'dd/MM/yyyy' ) }/>
       <View>
         { isLoading ? <Text>Carregando...</Text> : <CardCardapio data={data}/> }
       </View>
-      
+      </ScrollView>
     </View>
   );
 }

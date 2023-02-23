@@ -24,7 +24,7 @@ export default function Extensao() {
         <Card
           imageSource={require('../../assets/Cards_Extensao/CATIJr.png')}
           cardTitle="CATI Jr."
-          cardText={'Empresa Júnior. Trabalham com desenvolvimento de software.'}
+          cardText={'Empresa Júnior.\nTrabalham com desenvolvimento de software.'}
           screenName="Grupos de extensão - CATI Jr."
           />
         <Card

@@ -22,7 +22,7 @@ const CardCardapioItem = (props) => {
         </View>
 
         <View style={styles.viewHorarioRefeicao}>
-          <Image source={require('../assets/relogio.png')} style={{width: 20, height: 20}}/>
+          <Image source={require('../assets/icons/relogio.png')} style={{width: 20, height: 20}}/>
           <Text style={{paddingLeft:16}}>{props.horario}</Text>
         </View>
           
