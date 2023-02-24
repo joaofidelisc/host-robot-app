@@ -41,15 +41,11 @@ export default function Cardapio() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-<<<<<<< Updated upstream
-      <ScrollView style={{margin: '1%'}}>
-      <SelecaoCardapio comecoSemana = {format( startOfWeek(new Date(2023,1,13)), 'dd/MM/yyyy' ) }/>
-=======
-      <SelecaoCardapio index={index} comecoSemana = {format( startOfWeek( dataAtual ), 'dd/MM/yyyy' ) }/>
->>>>>>> Stashed changes
-      <View>
-        { isLoading ? <Text>Carregando...</Text> : <CardCardapio almoco={almoco} jantar={jantar}/> }
-      </View>
+      <ScrollView>
+        <SelecaoCardapio index={index} comecoSemana = {format( startOfWeek( dataAtual ), 'dd/MM/yyyy' ) }/>
+        <View>
+          { isLoading ? <Text>Carregando...</Text> : <CardCardapio almoco={almoco} jantar={jantar}/> }
+        </View>
       </ScrollView>
     </View>
   );
