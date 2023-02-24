@@ -11,9 +11,10 @@ const { width, height } = Dimensions.get('window');
 
 
 const SelecaoCardapio = (props) => {
-  const [index, setIndex] = useState( parseInt( format( new Date(), 'dd') ));
+  const [index, setIndex] = useState( props.index );
   const navigation = useNavigation();
-  console.log('SelecaoCardapio 16: '+index);
+
+  console.log('SelecaoCardapio 17: '+ index);
   return (
     <View style={styles.fundoSelecao}>
       <SelecaoCardapioItem

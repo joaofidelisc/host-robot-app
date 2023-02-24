@@ -9,15 +9,17 @@ const { width, height } = Dimensions.get('window');
 const SelecaoCardapioItem = (props) => {
   const navigation = useNavigation();
 
-  const { index, setIndex, selectedIndex } = props
-  console.log('SelecaoCardapioItem 13:'+ selectedIndex);
+  const { index, setIndex, selectedIndex } = props;
 
   return (
     <View style={styles.viewCardapioItem}>
       <Text style={styles.textoDiaSemana}>
         {props.diaSemana}
       </Text>
-      <TouchableOpacity style={ (props.diaMes == selectedIndex ) ? styles.botaoSelecionadoDiaMes : styles.botaoNaoSelecionadoDiaMes} onPress={(index) => setIndex(props.diaMes)} >
+      <TouchableOpacity 
+        style={ (props.diaMes == selectedIndex ) ? styles.botaoSelecionadoDiaMes : styles.botaoNaoSelecionadoDiaMes} 
+        onPress={(index) => setIndex(props.diaMes)}
+      >
         <Text style={ (props.diaMes == selectedIndex) ? styles.textoBotaoSelecionadoDiaMes : styles.textoBotaoNaoSelecionadoDiaMes}>
           {props.diaMes}
         </Text>

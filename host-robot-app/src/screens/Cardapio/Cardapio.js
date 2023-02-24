@@ -15,22 +15,11 @@ export default function Cardapio() {
   useEffect(()=>{
     const hoje = new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
     const dia = new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo', day: 'numeric' });
-    //console.log('Cadapio.js:18: ');
-    //console.log(format( new Date(), 'dd/MM/yyyy' ) );
-    //console.log(format( startOfWeek(new Date()), 'dd/MM/yyyy' ) );
-    //console.log('DIA:' + hoje); // exibe a data atual no formato "dd/mm/aaaa"
-
-
   })
-  // const first
-
-  /*const apiRU = async()=>{
-    const resposta = await fetch("https://petbcc.ufscar.br/ru_api/");
-    console.log(resposta);
-  }*/
 
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [index, setIndex] = useState( parseInt( format( new Date(2023,1,12), 'dd') ));
 
   useEffect(() => {
     fetch('https://petbcc.ufscar.br/ru_api/')
@@ -39,15 +28,27 @@ export default function Cardapio() {
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }, []);
+  const dataAtual = new Date(2023,1,12);
+  const diaDoMesAtual = format( dataAtual, 'dd');
+  const mesAtual = format( dataAtual, 'MM');
+  const anoAtual = format( dataAtual, 'yyyy');
 
-  //console.log(data);
+  var dataSelecionada = anoAtual + '-' + mesAtual + '-' + diaDoMesAtual;
+  const cardapiosSaoCarlos = data.filter( x => (x.campus === 'São Carlos' && x.date === dataSelecionada) );
+  const almoco = cardapiosSaoCarlos.filter( z => z.meal_type === 'Almoço')
+  const jantar = cardapiosSaoCarlos.filter( z => z.meal_type === 'Jantar')
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
+<<<<<<< Updated upstream
       <ScrollView style={{margin: '1%'}}>
       <SelecaoCardapio comecoSemana = {format( startOfWeek(new Date(2023,1,13)), 'dd/MM/yyyy' ) }/>
+=======
+      <SelecaoCardapio index={index} comecoSemana = {format( startOfWeek( dataAtual ), 'dd/MM/yyyy' ) }/>
+>>>>>>> Stashed changes
       <View>
-        { isLoading ? <Text>Carregando...</Text> : <CardCardapio data={data}/> }
+        { isLoading ? <Text>Carregando...</Text> : <CardCardapio almoco={almoco} jantar={jantar}/> }
       </View>
       </ScrollView>
     </View>
