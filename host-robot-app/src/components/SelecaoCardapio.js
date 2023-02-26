@@ -14,6 +14,11 @@ const SelecaoCardapio = (props) => {
   const [index, setIndex] = useState( props.index );
   const navigation = useNavigation();
 
+  const handleIndexChange = (newIndex) =>{
+    setIndex(newIndex);
+    props.onIndexChange(newIndex);
+  };
+
   console.log('SelecaoCardapio 17: '+ index);
   return (
     <View style={styles.fundoSelecao}>
@@ -21,43 +26,50 @@ const SelecaoCardapio = (props) => {
           selectedIndex = {index}
           diaSemana =  'Dom'
           diaMes = {props.comecoSemana.substring(0,2)}
-          setIndex = { index => setIndex(index) }
-        />
+          // setIndex = { index => setIndex(index) }
+          setIndex = {handleIndexChange}
+          />
         <SelecaoCardapioItem
           selectedIndex = {index}
           diaSemana =  'Seg'
           diaMes =  {parseInt(props.comecoSemana.substring(0,2)) + 1}
-          setIndex = { index => setIndex(index) }
-        />
+          setIndex = {handleIndexChange}
+          // setIndex = { index => setIndex(index) }
+          />
         <SelecaoCardapioItem
           selectedIndex = {index}
           diaSemana =  'Ter'
           diaMes =  {parseInt(props.comecoSemana.substring(0,2)) + 2}
-          setIndex = { index => setIndex(index) }
-        />
+          setIndex = {handleIndexChange}
+          // setIndex = { index => setIndex(index) }
+          />
         <SelecaoCardapioItem
           selectedIndex = {index}
           diaSemana =  'Qua'
           diaMes =  {parseInt(props.comecoSemana.substring(0,2)) + 3}
-          setIndex = { index => setIndex(index) }
-        />
+          setIndex = {handleIndexChange}
+          // setIndex = { index => setIndex(index) }
+          />
         <SelecaoCardapioItem
           selectedIndex = {index}
           diaSemana =  'Qui'
           diaMes =  {parseInt(props.comecoSemana.substring(0,2)) + 4}
-          setIndex = { index => setIndex(index) }
-        />
+          setIndex = {handleIndexChange}
+          // setIndex = { index => setIndex(index) }
+          />
         <SelecaoCardapioItem
           selectedIndex = {index}
           diaSemana =  'Sex'
           diaMes =  {parseInt(props.comecoSemana.substring(0,2)) + 5}
-          setIndex = { index => setIndex(index) }
-        />
+          setIndex = {handleIndexChange}
+          // setIndex = { index => setIndex(index) }
+          />
         <SelecaoCardapioItem
           selectedIndex = {index}
           diaSemana =  'Sáb'
           diaMes =  {parseInt(props.comecoSemana.substring(0,2)) + 6}
-          setIndex = { index => setIndex(index) }
+          setIndex = {handleIndexChange}
+          // setIndex = { index => setIndex(index) }
         />
       </View>
   );

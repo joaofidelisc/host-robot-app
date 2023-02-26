@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 
 
 import { View, Image, Text, StyleSheet, TouchableOpacity, Dimensions, PixelRatio } from 'react-native';
@@ -9,11 +9,20 @@ const { width, height } = Dimensions.get('window');
 const cardWidth = (width*0.8)/2;
 
 const CardCardapioItem = (props) => {
+  const [existeRefeicao, setExisteRefeicao] = useState(false);
   const navigation = useNavigation();
-  /*console.log('CardCardapioItem 13: dados recebidos no componente');
-  console.log(props.data[0]);
-  console.log(props.data[0].campus);*/
+
   const cardapioDia = props.data[0];
+
+  const mainDishUnrestricted = cardapioDia && cardapioDia.main_dish_unrestricted || 'Opção indisponível';
+  const mainDishVegetarian = cardapioDia && cardapioDia.main_dish_vegetarian || 'Opção indisponível';
+  const mainDishExtra = cardapioDia && cardapioDia.main_dish_extra || 'Opção indisponível';
+  const garnish = cardapioDia && cardapioDia.garnish || 'Opção indisponível';
+  const dessert = cardapioDia && cardapioDia.dessert || 'Opção indisponível';
+  const accompaniment = cardapioDia && cardapioDia.accompaniment || 'Opção indisponível';
+  const salads = cardapioDia && cardapioDia.salads || 'Opção indisponível';
+
+  
   return (
       <View style={styles.CardCardapio}>
 
@@ -25,29 +34,28 @@ const CardCardapioItem = (props) => {
           <Image source={require('../assets/icons/relogio.png')} style={{width: 20, height: 20}}/>
           <Text style={{paddingLeft:16}}>{props.horario}</Text>
         </View>
-          
-        <View style={styles.viewDescricaoRefeicao}>
-          <Text style={styles.textoItemRefeicao}>Prato Principal - Sem restrição</Text>
-          <Text style={styles.textoValor}>{cardapioDia.main_dish_unrestricted}</Text>
-          
-          <Text style={styles.textoItemRefeicao}>Prato Principal - Vegetariano</Text>
-          <Text style={styles.textoValor}>{cardapioDia.main_dish_vegetarian}</Text>
-          
-          <Text style={styles.textoItemRefeicao}>Prato Principal - Extra com ovo</Text>
-          <Text style={styles.textoValor}>{cardapioDia.main_dish_extra}</Text>
-          
-          <Text style={styles.textoItemRefeicao}>Guarnição</Text>
-          <Text style={styles.textoValor}>{cardapioDia.garnish}</Text>
-          
-          <Text style={styles.textoItemRefeicao}>Acompanhamentos</Text>
-          <Text style={styles.textoValor}>{cardapioDia.accompaniment}</Text>
-          
-          <Text style={styles.textoItemRefeicao}>Salada</Text>
-          <Text style={styles.textoValor}>{cardapioDia.salads}</Text>
-          
-          <Text style={styles.textoItemRefeicao}>Sobremesa</Text>
-          <Text style={styles.textoValor}>{cardapioDia.dessert}</Text>
-        </View>
+          <View style={styles.viewDescricaoRefeicao}>
+            <Text style={styles.textoItemRefeicao}>Prato Principal - Sem restrição</Text>
+            <Text style={styles.textoValor}>{mainDishUnrestricted}</Text>
+            
+            <Text style={styles.textoItemRefeicao}>Prato Principal - Vegetariano</Text>
+            <Text style={styles.textoValor}>{mainDishVegetarian}</Text>
+            
+            <Text style={styles.textoItemRefeicao}>Prato Principal - Extra com ovo</Text>
+            <Text style={styles.textoValor}>{mainDishExtra}</Text>
+            
+            <Text style={styles.textoItemRefeicao}>Guarnição</Text>
+            <Text style={styles.textoValor}>{garnish}</Text>
+            
+            <Text style={styles.textoItemRefeicao}>Acompanhamentos</Text>
+            <Text style={styles.textoValor}>{accompaniment}</Text>
+            
+            <Text style={styles.textoItemRefeicao}>Salada</Text>
+            <Text style={styles.textoValor}>{salads}</Text>
+            
+            <Text style={styles.textoItemRefeicao}>Sobremesa</Text>
+            <Text style={styles.textoValor}>{dessert}</Text>
+          </View>
       </View>
   );
 };

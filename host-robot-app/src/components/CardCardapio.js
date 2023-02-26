@@ -11,8 +11,8 @@ const CardCardapio = (props) => {
 
   return (
     <View style={styles.CardCardapio}>
-      <CardCardapioItem data={props.almoco} refeicao={'Almoço'} horario={'11h00 - 14h00'}/>
-      <CardCardapioItem data={props.jantar} refeicao={'Jantar'} horario={'17h00 - 19h00'}/>
+      <CardCardapioItem date ={props.date} data={props.almoco} refeicao={'Almoço'} horario={'11h00 - 14h00'}/>
+      <CardCardapioItem date ={props.date} data={props.jantar} refeicao={'Jantar'} horario={'17h00 - 19h00'}/>
     </View>
   );
 };
