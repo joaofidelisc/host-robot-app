@@ -70,7 +70,7 @@ export default function Home() {
             <Card
               imageSource={require('../../assets/Cards_Home/MapaDC.png')}
               cardTitle="Mapa DC"
-              cardText={'Descupa informações como onde fazer sua refeição, sanitários e salas de aulas.'}
+              cardText={'Descubra informações como onde fazer sua refeição, sanitários e salas de aulas.'}
               screenName="Mapa DC"
               />
             <Card
@@ -95,26 +95,26 @@ export default function Home() {
               />
             <Card
               imageSource={require('../../assets/Cards_Home/GruposExtensao.png')}
-              cardTitle="Grupos de extensão"
-              cardText={'Aqui você encontra informações sobre os grupos de extensão disponíveis.'}
+              cardTitle="Extension Groups"
+              cardText={'Here you find information about available extension groups!'}
               screenName="Grupos de extensão"
               />
             <Card
               imageSource={require('../../assets/Cards_Home/Eventos.png')}
-              cardTitle="Eventos"
-              cardText={'Que tal ficar por dentro dos eventos do departamento e da universidade?'}
+              cardTitle="Events"
+              cardText={'Do you want to find out about the events happening in the University?'}
               screenName="Eventos"
               />
             <Card
               imageSource={require('../../assets/Cards_Home/MapaDC.png')}
-              cardTitle="Mapa DC"
-              cardText={'Descupa informações como onde fazer sua refeição, sanitários e salas de aulas.'}
+              cardTitle="DC Map"
+              cardText={'Find out information about where to eat your meals, bathrooms and classrooms.'}
               screenName="Mapa DC"
               />
             <Card
               imageSource={require('../../assets/Cards_Home/HorarioAula.png')}
-              cardTitle="Horário das aulas"
-              cardText={'Para onde vai agora?\nConfirme o horário das suas aulas e o local também!'}
+              cardTitle="Class Times"
+              cardText={'Where are you going to now?\nConfirm the times of your classes and also the place.'}
               screenName="Horário das aulas"
             />
           </View>
