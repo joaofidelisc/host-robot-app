@@ -1,13 +1,10 @@
-import { format, startOfWeek } from 'date-fns'
 
-import React, {useEffect} from 'react';
-import { View, Image, Text, StyleSheet, TouchableOpacity, Dimensions, PixelRatio } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
 
 const SelecaoCardapioItem = (props) => {
-  const navigation = useNavigation();
 
   const { index, setIndex, selectedIndex } = props;
 
@@ -28,7 +25,6 @@ const SelecaoCardapioItem = (props) => {
   );
 };
 
-//onPress= { () => recebeIndex(props.diaMes) }
 
 const styles = StyleSheet.create({
     container: {
@@ -41,39 +37,36 @@ const styles = StyleSheet.create({
       marginTop:4,
       justifyContent:'center',
       alignItems:'center',
-      width: 30, 
-      height: 30,
+      width: height*0.04375, 
+      height: height*0.04375,
       borderRadius: 100,
       backgroundColor: '#FFFFFF',     //selecionado
-      //backgroundColor: '#4D94DD',   //não selecionado
     },
     botaoNaoSelecionadoDiaMes:{
       marginTop:4,
       justifyContent:'center',
       alignItems:'center',
-      width: 30, 
-      height: 30,
+      width: height*0.04375, 
+      height: height*0.04375,
       borderRadius: 100,
       backgroundColor: '#4D94DD',   //não selecionado
     },
     textoBotaoSelecionadoDiaMes:{        
       color: '#4D94DD',               //selecionado
-      //margin:3,
+      fontSize: height*0.025,
     },
   textoBotaoNaoSelecionadoDiaMes:{        
     color: '#FFFFFF',             //não selecionado
-    //margin:3,
+    fontSize: height*0.025,
     },
     textoDiaSemana:{
         fontWeight: '600',
+        fontSize: height*0.025,
         color:'#FFFFFF',
     },
     viewCardapioItem:{
-      //paddingLeft: 50,
-      //paddingRight: 20,
       alignItems: 'center',
       width: width*0.11,
-      //width: 120,
       height: height*0.0875,
     }
 });  

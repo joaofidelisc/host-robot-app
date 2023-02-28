@@ -30,12 +30,6 @@ export default function Cardapio() {
     setSelectedIndex(newIndex);
   }
 
-  useEffect(()=>{
-    const hoje = new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
-    const dia = new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo', day: 'numeric' });
-  })
-
-
   useEffect(() => {
     fetch('https://petbcc.ufscar.br/ru_api/')
       .then((response) => response.json())
@@ -50,8 +44,6 @@ export default function Cardapio() {
       console.log("Antes de cardapio\n");
       const cardapiosSaoCarlos = data.filter( x => (x.campus === 'São Carlos' && x.date === dataSelecionada) );
       
-      // const almoco = cardapiosSaoCarlos.filter( z => z.meal_type === 'Almoço');
-      // const jantar = cardapiosSaoCarlos.filter( z => z.meal_type === 'Jantar');
       setAlmoco(cardapiosSaoCarlos.filter( z => z.meal_type === 'Almoço'));
       setJantar(cardapiosSaoCarlos.filter( z => z.meal_type === 'Jantar'));
       console.log(cardapiosSaoCarlos.filter( z => z.meal_type === 'Jantar'));
@@ -66,7 +58,8 @@ export default function Cardapio() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <ScrollView>
+      <ScrollView style={{flex: 1}}>
+        <Text style={{alignSelf:'center', fontSize: height*0.03, fontWeight: '700', marginTop: '4%'}}>Selecione o dia e confira o cardápio!</Text>
         <SelecaoCardapio 
           index = {selectedIndex}
           onIndexChange = {handleIndexChange}
@@ -94,12 +87,12 @@ const styles = StyleSheet.create({
     color: 'red',
   },
   fundoSelecao:{
-    borderRadius: 50,
+    borderRadius: '6.25%',
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
     backgroundColor: '#4D94DD',
-    padding: 20,
+    padding: '2.5%',
     height: height*0.11625,
     width: width*0.8421,
   }

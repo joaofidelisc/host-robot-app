@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 
 import { View, Image, Text, StyleSheet, TouchableOpacity, Dimensions, PixelRatio } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { he } from 'date-fns/locale';
 
 const { width, height } = Dimensions.get('window');
 
@@ -31,8 +32,8 @@ const CardCardapioItem = (props) => {
         </View>
 
         <View style={styles.viewHorarioRefeicao}>
-          <Image source={require('../assets/icons/relogio.png')} style={{width: 20, height: 20}}/>
-          <Text style={{paddingLeft:16}}>{props.horario}</Text>
+          <Image source={require('../assets/icons/relogio.png')} style={{width: height*0.04625, height: height*0.04625}}/>
+          <Text style={{paddingLeft:'2%', fontSize: height*0.0202}}>{props.horario}</Text>
         </View>
           <View style={styles.viewDescricaoRefeicao}>
             <Text style={styles.textoItemRefeicao}>Prato Principal - Sem restrição</Text>
@@ -63,46 +64,45 @@ const CardCardapioItem = (props) => {
 
 const styles = StyleSheet.create({
   textoValor:{
-    paddingLeft: 24,
+    paddingLeft: '4%',
+    fontSize: height*0.021,
   },
   textoItemRefeicao:{
-    //fontWeight:600,
+    fontSize: height*0.021,
     fontWeight: '700',
   },
   viewDescricaoRefeicao:{
-    paddingTop: 8,
-    paddingBottom: 8,
-    paddingLeft: 48,  
+    paddingTop: '1%',
+    paddingBottom: '1%',
+    paddingLeft: '6%',  
   },
   viewHorarioRefeicao:{
-    paddingTop: 8,
-    paddingBottom: 8,
+    paddingTop: '1%',
+    paddingBottom: '1%',
     alignItems:'center',
     flexDirection: 'row',
-    paddingLeft: 48,
+    paddingLeft: '6%',
     borderBottomWidth: 1,
     borderBottomColor: '#9C9C9C',
   },
   viewTituloRefeicao:{
-    paddingTop: 16,
-    paddingBottom: 16,
+    paddingTop: '2%',
+    paddingBottom: '2%',
     alignItems: 'center',
     borderBottomWidth: 1,
     borderBottomColor: '#9C9C9C',
   },
   tituloRefeicao:{
-    //fontWeight: 600,
     fontWeight: '700',
-    fontSize: 27,
+    fontSize: height*0.026,
   },
   CardCardapio:{
-        //backgroundColor: 'red',
-        width: cardWidth,
-        //height: 50,
-        marginTop: 24,
+        width: width*0.4172,
+        height: height*0.5325,
+        marginTop: '3%',
         marginLeft: (width*0.0421)/4,
         marginRight: (width*0.0421)/4,
-        borderRadius: 16,
+        borderRadius: '2%',
         borderColor: '#9C9C9C',
         borderWidth:1,
     }

@@ -7,8 +7,7 @@ const { width, height } = Dimensions.get('window');
 
 
 const CardCardapio = (props) => {
-  const navigation = useNavigation();
-
+  
   return (
     <View style={styles.CardCardapio}>
       <CardCardapioItem date ={props.date} data={props.almoco} refeicao={'Almoço'} horario={'11h00 - 14h00'}/>

@@ -27,8 +27,6 @@ const SelecaoCardapio = (props) => {
     console.log('Dates:', newDates);
   }, [props.comecoSemana]);
 
-
-  console.log('SelecaoCardapio 17: '+ index);
   return (
     <View style={styles.fundoSelecao}>
       {dates.map((date, i) => (
@@ -46,14 +44,20 @@ const SelecaoCardapio = (props) => {
 
 const styles = StyleSheet.create({
     fundoSelecao:{
-      borderRadius: 50,
-      alignItems: 'center',
+      flex: 1,
       flexDirection: 'row',
       justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: 50,
       backgroundColor: '#4D94DD',
       height: height*0.11625,
       width: width*0.8421,
+      marginTop: '5.45%',
+      marginBottom: '3.63%'
     }
   });
+
+  //1280
+  //800
 
   export default SelecaoCardapio;
