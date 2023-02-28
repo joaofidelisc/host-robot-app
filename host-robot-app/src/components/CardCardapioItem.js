@@ -65,10 +65,10 @@ const CardCardapioItem = (props) => {
 const styles = StyleSheet.create({
   textoValor:{
     paddingLeft: '4%',
-    fontSize: height*0.021,
+    fontSize: height*0.018,
   },
   textoItemRefeicao:{
-    fontSize: height*0.021,
+    fontSize: height*0.018,
     fontWeight: '700',
   },
   viewDescricaoRefeicao:{
@@ -94,15 +94,15 @@ const styles = StyleSheet.create({
   },
   tituloRefeicao:{
     fontWeight: '700',
-    fontSize: height*0.026,
+    fontSize: height*0.024,
   },
   CardCardapio:{
-        width: width*0.4172,
-        height: height*0.5325,
-        marginTop: '3%',
+        width: width*0.4072,
+        height: height*0.5225,
+        marginTop: '1%',
         marginLeft: (width*0.0421)/4,
         marginRight: (width*0.0421)/4,
-        borderRadius: '2%',
+        borderRadius: 16,
         borderColor: '#9C9C9C',
         borderWidth:1,
     }

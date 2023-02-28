@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     color: 'red',
   },
   fundoSelecao:{
-    borderRadius: '6.25%',
+    borderRadius: 50,
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'center',

@@ -52,8 +52,8 @@ const styles = StyleSheet.create({
       backgroundColor: '#4D94DD',
       height: height*0.11625,
       width: width*0.8421,
-      marginTop: '5.45%',
-      marginBottom: '3.63%'
+      marginTop: '2%',
+      marginBottom: '2%'
     }
   });
 
