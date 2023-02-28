@@ -20,7 +20,7 @@ export default function Extensao() {
       <StatusBar style="auto" />
       <Text style={styles.titulo}>Estes são os grupos de extensão relacionados ao departamento</Text>
       <Text style={[styles.titulo, {top:height*0.12}]}>Clique em algum e conheça mais sobre ele!</Text>
-      <View style={{flexDirection:'row'}}>
+      <View style={{flex: 1, flexDirection: 'row', top: height*0.225}}>
         <Card
           imageSource={require('../../assets/Cards_Extensao/CATIJr.png')}
           cardTitle="CATI Jr."

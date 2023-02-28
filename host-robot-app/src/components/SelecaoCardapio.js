@@ -1,9 +1,8 @@
-import { format, startOfWeek } from 'date-fns'
-
+import { format, startOfWeek, addDays } from 'date-fns'
+import pt from 'date-fns/esm/locale/pt/index.js';
 
 import React, {useEffect, useState} from 'react';
-import { View, Image, Text, StyleSheet, TouchableOpacity, Dimensions, PixelRatio } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { View, StyleSheet, Dimensions } from 'react-native';
 import SelecaoCardapioItem from './SelecaoCardapioItem';
 
 const { width, height } = Dimensions.get('window');
@@ -12,65 +11,35 @@ const { width, height } = Dimensions.get('window');
 
 const SelecaoCardapio = (props) => {
   const [index, setIndex] = useState( props.index );
-  const navigation = useNavigation();
+  const [dates, setDates] = useState([]);  
 
   const handleIndexChange = (newIndex) =>{
     setIndex(newIndex);
     props.onIndexChange(newIndex);
   };
 
+  useEffect(() => {
+    const [dia, mes, ano] = props.comecoSemana.split('/');
+    const date = new Date(ano, mes-1, dia);
+    const firstDayOfWeek = startOfWeek(date, { weekStartsOn: 0 });
+    const newDates = Array(7).fill().map((_, i) => addDays(firstDayOfWeek, i));
+    setDates(newDates);
+    console.log('Dates:', newDates);
+  }, [props.comecoSemana]);
+
+
   console.log('SelecaoCardapio 17: '+ index);
   return (
     <View style={styles.fundoSelecao}>
-      <SelecaoCardapioItem
-          selectedIndex = {index}
-          diaSemana =  'Dom'
-          diaMes = {props.comecoSemana.substring(0,2)}
-          // setIndex = { index => setIndex(index) }
-          setIndex = {handleIndexChange}
-          />
+      {dates.map((date, i) => (
         <SelecaoCardapioItem
-          selectedIndex = {index}
-          diaSemana =  'Seg'
-          diaMes =  {parseInt(props.comecoSemana.substring(0,2)) + 1}
-          setIndex = {handleIndexChange}
-          // setIndex = { index => setIndex(index) }
-          />
-        <SelecaoCardapioItem
-          selectedIndex = {index}
-          diaSemana =  'Ter'
-          diaMes =  {parseInt(props.comecoSemana.substring(0,2)) + 2}
-          setIndex = {handleIndexChange}
-          // setIndex = { index => setIndex(index) }
-          />
-        <SelecaoCardapioItem
-          selectedIndex = {index}
-          diaSemana =  'Qua'
-          diaMes =  {parseInt(props.comecoSemana.substring(0,2)) + 3}
-          setIndex = {handleIndexChange}
-          // setIndex = { index => setIndex(index) }
-          />
-        <SelecaoCardapioItem
-          selectedIndex = {index}
-          diaSemana =  'Qui'
-          diaMes =  {parseInt(props.comecoSemana.substring(0,2)) + 4}
-          setIndex = {handleIndexChange}
-          // setIndex = { index => setIndex(index) }
-          />
-        <SelecaoCardapioItem
-          selectedIndex = {index}
-          diaSemana =  'Sex'
-          diaMes =  {parseInt(props.comecoSemana.substring(0,2)) + 5}
-          setIndex = {handleIndexChange}
-          // setIndex = { index => setIndex(index) }
-          />
-        <SelecaoCardapioItem
-          selectedIndex = {index}
-          diaSemana =  'Sáb'
-          diaMes =  {parseInt(props.comecoSemana.substring(0,2)) + 6}
-          setIndex = {handleIndexChange}
-          // setIndex = { index => setIndex(index) }
+          key={i}
+          selectedIndex={index}
+          diaSemana={format(date, 'EEE', {locale: pt})}
+          diaMes={format(date, 'd')}
+          setIndex={handleIndexChange}
         />
+      ))}
       </View>
   );
 };
@@ -82,7 +51,6 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'center',
       backgroundColor: '#4D94DD',
-      //padding: 20,
       height: height*0.11625,
       width: width*0.8421,
     }

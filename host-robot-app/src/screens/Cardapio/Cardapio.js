@@ -63,19 +63,11 @@ export default function Cardapio() {
     console.log('Cardapiojs 59: '+selectedIndex);
   },[selectedIndex]);
 
-
-  // const dataAtual = new Date(2023,1,12);
-  //const diaDoMesAtual = format( dataAtual, 'dd');
-  //const mesAtual = format( dataAtual, 'MM');
-  //const anoAtual = format( dataAtual, 'yyyy');
-
-
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
       <ScrollView>
         <SelecaoCardapio 
-          // setIndex = { index => setIndex(index) } 
           index = {selectedIndex}
           onIndexChange = {handleIndexChange}
           comecoSemana = {format( startOfWeek( dataAtual ), 'dd/MM/yyyy' ) }

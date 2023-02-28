@@ -17,6 +17,11 @@ export default function Home() {
   //   // console.log('IDIOMA:', idioma);
   // }, [idioma]);
 
+  useEffect(()=>{
+    console.log('Altura:', height);
+    console.log('Largura:', width);
+  })
+
 
   return (
     <View style={styles.container}>
@@ -43,7 +48,7 @@ export default function Home() {
           idioma=='PT-BR' &&
           <>
           <Text style={styles.titulo}>Olá visitante, no que posso ajudar hoje?</Text>
-          <View style={{flexDirection:'row'}}>
+          <View style={{flex: 1, flexDirection: 'row', top: height*0.225}}>
             <Card
               imageSource={require('../../assets/Cards_Home/Cardapio.png')}
               cardTitle="Cardápio"
@@ -81,7 +86,7 @@ export default function Home() {
            idioma=='ENG' &&
            <>
            <Text style={styles.titulo}>Hi, How Can I help you today?</Text>
-           <View style={{flexDirection:'row'}}>
+          <View style={{flex: 1, flexDirection: 'row', top: height*0.225}}>
             <Card
               imageSource={require('../../assets/Cards_Home/Cardapio.png')}
               cardTitle="Menu"
