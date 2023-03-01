@@ -16,7 +16,7 @@ export default function Cardapio() {
   // const [index, setIndex] = useState( parseInt( format( new Date(2023,1,12), 'dd') ));
   
   const [dataAtual, setDataAtual] = useState(new Date());
-  const [diaDoMesAtual, setDiaDoMesAtual] = useState(format( dataAtual, 'dd'));
+  // const [diaDoMesAtual, setDiaDoMesAtual] = useState(format( dataAtual, 'dd'));
   const [mesAtual, setMesAtual] = useState(format(dataAtual, 'MM'));
   const [anoAtual, setAnoAtual] = useState(format( dataAtual, 'yyyy'));
 
@@ -40,7 +40,16 @@ export default function Cardapio() {
   
   useEffect(()=>{
     if (data != []){
-      var dataSelecionada = anoAtual + '-' + mesAtual + '-' + selectedIndex;
+
+      const now = new Date();
+      const ultimoDia = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+      console.log("ultimo dia:", ultimoDia);
+      let diaSelecionado = selectedIndex < 10 ? '0' + selectedIndex : selectedIndex;
+      var dataSelecionada = anoAtual + '-' + mesAtual + '-' + diaSelecionado;
+      //Como obter o mês de março?
+
+      console.log("Data selecionada:", dataSelecionada);
+      console.log("Selected index:", selectedIndex, 'dia atual:', diaSelecionado);
       console.log("Antes de cardapio\n");
       const cardapiosSaoCarlos = data.filter( x => (x.campus === 'São Carlos' && x.date === dataSelecionada) );
       
