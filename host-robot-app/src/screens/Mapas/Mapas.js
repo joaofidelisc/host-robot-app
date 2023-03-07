@@ -5,7 +5,7 @@ export default function Mapas() {
   
   const chamadaAPI = async() => {
     console.log('Chamando API...');
-    fetch('http://192.168.137.14:5000/ros/goTo/LE-1').catch((error)=> console.log(error));
+    fetch('http://192.168.0.200:5000/ros/goTo/LE-1').catch((error)=> console.log(error));
   }
 
   return (
