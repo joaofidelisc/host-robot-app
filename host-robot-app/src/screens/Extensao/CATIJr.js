@@ -24,7 +24,7 @@ export default function CATIJr() {
         source={require('../../assets/icons/whatsapp.png')}
         style={styles.redeSocial}
       />
-      <Text style={[styles.corpoTexto, {position: 'absolute', top: '54%', left: '9.5%'}]}>{`+55 12 98116-4454`}</Text>
+      <Text style={[styles.corpoTexto, {position: 'absolute', top: '54%', left: '9.5%'}]}>{`+55 16 3306-6820`}</Text>
       <Image
         source={require('../../assets/icons/instagram.png')}
         style={[styles.redeSocial, {top:'59%'}]}

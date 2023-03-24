@@ -5,6 +5,7 @@ import Cardapio from '../screens/Cardapio/Cardapio.js';
 import Extensao from '../screens/Extensao/Extensao.js';
 import Eventos from '../screens/Eventos/Eventos.js';
 import Mapas from '../screens/Mapas/Mapas.js';
+import Info from '../screens/Mapas/Info.js';
 import Horarios from '../screens/Horarios/Horarios.js';
 
 //Grupos de extensão
@@ -38,6 +39,7 @@ function RotasApp(){
     
       <Stack.Screen name="Eventos" component={Eventos}/>
       <Stack.Screen name="Mapa DC" component={Mapas}/>
+      <Stack.Screen name="Mapa DC - Informações" component={Info}/>
       <Stack.Screen name="Horário das aulas" component={Horarios}/>
     </Stack.Navigator>
   )
